@@ -11,26 +11,29 @@
 }(typeof window !== 'undefined' ? window : this,function(win){
     var idTag = 0;
     var keyBoardNum = function(numberId,option){
-        var me = this,insertId = 'keyBoardNum'+(++idTag),payId = 'keyBoardPay'+(idTag);
-        var defaultOpt = {
-            itemHeight:60, //一个数字键的高度
-            decimal:2, //小数点长度
-            integer:4, //整数部分长度
-            fontSize:'30px', //数字字体大小
-            color:'#333', //数字的颜色
-            bgColor:'#fff', //背景颜色
-            borderColor:'#E5E5E5', //边框颜色
-            activeColor:'#ebebeb', //键盘被点击时的背景颜色
-            btnText:'确认', //按钮显示的文字
-            btnColor:'#fff', //按钮文字的颜色
-            btnFontSize:'70px', //按钮文字大小
-            btnBgColor:'#bcbcbc', //按钮的背景颜色
-            btnActiveBgColor:'#fe9b20', //按钮激活的背景颜色
-            btnTouchBgColor:'#e27d00', //按钮激活后被点击时的背景颜色
-            btnCallBack:null, //按钮点击后的回调
-            delImg:delImgBase, //删除按钮图片
-            hideImg:hideImgBase, //隐藏按钮图片
-        }
+        this.version = '0.0.1';
+        var me = this,
+            insertId = 'keyBoardNum'+(++idTag),
+            payId = 'keyBoardPay'+(idTag),
+            defaultOpt = {
+                itemHeight:60, //一个数字键的高度
+                decimal:2, //小数点长度
+                integer:4, //整数部分长度
+                fontSize:'30px', //数字字体大小
+                color:'#333', //数字的颜色
+                bgColor:'#fff', //背景颜色
+                borderColor:'#E5E5E5', //边框颜色
+                activeColor:'#ebebeb', //键盘被点击时的背景颜色
+                btnText:'确认', //按钮显示的文字
+                btnColor:'#fff', //按钮文字的颜色
+                btnFontSize:'70px', //按钮文字大小
+                btnBgColor:'#bcbcbc', //按钮的背景颜色
+                btnActiveBgColor:'#fe9b20', //按钮激活的背景颜色
+                btnTouchBgColor:'#e27d00', //按钮激活后被点击时的背景颜色
+                btnCallBack:null, //按钮点击后的回调
+                delImg:delImgBase, //删除按钮图片
+                hideImg:hideImgBase, //隐藏按钮图片
+            }
         for(var item in defaultOpt){
             if(option[item]){
                 defaultOpt[item] = option[item];
