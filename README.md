@@ -1,7 +1,8 @@
 # keyBoardNum
 移动端数字键盘插件，该插件依赖于zepto或者jquery
-
-## 使用方法
+## 效果图
+[tu](./xgt.png)
+## 使用方法  
 在页面中引入zepto或者jquery
 ```javascript
 <script type="text/javascript" src="zepto.min.js"></script>
