@@ -12,7 +12,7 @@
 ```
 两个文件引入之后就可以初始化键盘了
 ```javascript
-var key = new keyBoardNum('#input',{
+var key = new KeyBoardNum('#input',{
     decimal:5,
     integer:3,
     btnCallBack:function(num){
@@ -21,7 +21,7 @@ var key = new keyBoardNum('#input',{
 });
 key.show();
 //也支持链式调用
-var key = new keyBoardNum('#input',{
+var key = new KeyBoardNum('#input',{
     decimal:5,
     integer:3,
     btnCallBack:function(num){
@@ -31,7 +31,7 @@ var key = new keyBoardNum('#input',{
 ```
 
 ## 参数说明
-keyBoradNum接受两个参数：
+KeyBoradNum接受两个参数：
 
 1、第一个参数：显示输入的数字的元素(支持一切合法的元素选择类型)，这个元素不能是input或者textarea
 
