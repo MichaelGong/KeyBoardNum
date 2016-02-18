@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Keyboardnum by MichaelGong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Keyboardnum</h1>
+      <h2 class="project-tagline">移动端数字键盘</h2>
+      <a href="https://github.com/MichaelGong/KeyBoardNum" class="btn">View on GitHub</a>
+      <a href="https://github.com/MichaelGong/KeyBoardNum/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/MichaelGong/KeyBoardNum/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="keyboardnum" class="anchor" href="#keyboardnum" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>keyBoardNum</h1>
+
+<p>移动端数字键盘插件，该插件依赖于zepto或者jquery</p>
+
+<h2>
+<a id="效果图" class="anchor" href="#%E6%95%88%E6%9E%9C%E5%9B%BE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>效果图</h2>
+
+<p><img src="./xgt.png" alt="tu"></p>
+
+<h2>
+<a id="使用方法" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用方法</h2>
+
+<p>在页面中引入zepto或者jquery</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>script type<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>zepto.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span></pre></div>
+
+<p>然后引入keyboardNum(页面中的css已经全部打包在js中了，无需引用css)</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>script type<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>keyboardNum.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span></pre></div>
+
+<p>两个文件引入之后就可以初始化键盘了</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> key <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">KeyBoardNum</span>(<span class="pl-s"><span class="pl-pds">'</span>#input<span class="pl-pds">'</span></span>,{
+    decimal<span class="pl-k">:</span><span class="pl-c1">5</span>,
+    integer<span class="pl-k">:</span><span class="pl-c1">3</span>,
+    <span class="pl-en">btnCallBack</span><span class="pl-k">:</span><span class="pl-k">function</span>(<span class="pl-smi">num</span>){
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(num);
+    }
+});
+<span class="pl-smi">key</span>.<span class="pl-en">show</span>();
+<span class="pl-c">//也支持链式调用</span>
+<span class="pl-k">var</span> key <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">KeyBoardNum</span>(<span class="pl-s"><span class="pl-pds">'</span>#input<span class="pl-pds">'</span></span>,{
+    decimal<span class="pl-k">:</span><span class="pl-c1">5</span>,
+    integer<span class="pl-k">:</span><span class="pl-c1">3</span>,
+    <span class="pl-en">btnCallBack</span><span class="pl-k">:</span><span class="pl-k">function</span>(<span class="pl-smi">num</span>){
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(num);
+    }
+}).<span class="pl-en">show</span>();</pre></div>
+
+<h2>
+<a id="参数说明" class="anchor" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>参数说明</h2>
+
+<p>KeyBoradNum接受两个参数：</p>
+
+<p>1、第一个参数：显示输入的数字的元素(支持一切合法的元素选择类型)，这个元素不能是input或者textarea</p>
+
+<p>2、第二个参数option，一个对象，其属性如下</p>
+
+<table>
+<thead>
+<tr>
+<th>属性名称</th>
+<th align="left">属性说明</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>itemHeight</td>
+<td align="left">一个数字键的高度</td>
+<td align="left">60</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td align="left">允许的小数点长度</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td>integer</td>
+<td align="left">允许的整数部分长度</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td>fontSize</td>
+<td align="left">数字字体大小</td>
+<td align="left">'30px'</td>
+</tr>
+<tr>
+<td>color</td>
+<td align="left">数字的颜色</td>
+<td align="left">'#333'</td>
+</tr>
+<tr>
+<td>bgColor</td>
+<td align="left">背景颜色</td>
+<td align="left">'#fff'</td>
+</tr>
+<tr>
+<td>borderColor</td>
+<td align="left">边框颜色</td>
+<td align="left">'#E5E5E5'</td>
+</tr>
+<tr>
+<td>activeColor</td>
+<td align="left">键盘被点击时的背景颜色</td>
+<td align="left">'#ebebeb'</td>
+</tr>
+<tr>
+<td>btnText</td>
+<td align="left">按钮显示的文字</td>
+<td align="left">'确认'</td>
+</tr>
+<tr>
+<td>btnColor</td>
+<td align="left">按钮文字的颜色</td>
+<td align="left">'#fff'</td>
+</tr>
+<tr>
+<td>btnFontSize</td>
+<td align="left">按钮文字大小</td>
+<td align="left">'70px'</td>
+</tr>
+<tr>
+<td>btnBgColor</td>
+<td align="left">按钮的背景颜色</td>
+<td align="left">'#bcbcbc'</td>
+</tr>
+<tr>
+<td>btnActiveBgColor</td>
+<td align="left">按钮激活的背景颜色</td>
+<td align="left">'#fe9b20'</td>
+</tr>
+<tr>
+<td>btnTouchBgColor</td>
+<td align="left">按钮激活后被点击时的背景颜色</td>
+<td align="left">'#e27d00'</td>
+</tr>
+<tr>
+<td>btnCallBack</td>
+<td align="left">按钮点击后的回调</td>
+<td align="left">null</td>
+</tr>
+<tr>
+<td>delImg</td>
+<td align="left">删除按钮图片</td>
+<td align="left">默认值以base64形式存储在js中</td>
+</tr>
+<tr>
+<td>hideImg</td>
+<td align="left">隐藏按钮图片</td>
+<td align="left">默认值以base64形式存储在js中</td>
+</tr>
+</tbody>
+</table>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/MichaelGong/KeyBoardNum">Keyboardnum</a> is maintained by <a href="https://github.com/MichaelGong">MichaelGong</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
