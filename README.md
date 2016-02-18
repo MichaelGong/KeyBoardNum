@@ -32,7 +32,9 @@ var key = new keyBoardNum('#input',{
 
 ## 参数说明
 keyBoradNum接受两个参数：
+
 1、第一个参数：显示输入的数字的元素(支持一切合法的元素选择类型)，这个元素不能是input或者textarea
+
 2、第二个参数option，一个对象，其属性如下
 
 | 属性名称 | 属性说明 | 默认值 |
