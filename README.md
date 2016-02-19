@@ -1,5 +1,5 @@
 # keyBoardNum
-移动端数字键盘插件，该插件依赖于zepto或者jquery
+移动端数字键盘插件，该插件依赖于zepto或者jquery，主要是为了解决ios默认系统键盘无法调出小数点的问题
 ## 效果图
 ![tu](./xgt.png)
 ## 使用方法  
